@@ -2,7 +2,7 @@ import axios from "axios"
 import type { Movie } from "../components/types/movie"
 
 interface MoviesHttpResponce {
-  hits: Movie[];
+  results: Movie[];
 }
 
 export const fetchMovies = async (query: string): Promise<Movie[]> => {
@@ -18,5 +18,5 @@ export const fetchMovies = async (query: string): Promise<Movie[]> => {
       }
     
   });
-  return response.data.hits;
+  return response.data.results;
 };
