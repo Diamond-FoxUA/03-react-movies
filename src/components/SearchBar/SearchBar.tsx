@@ -8,11 +8,11 @@ interface SearchBarProps {
 function SearchBar({ onSubmit }: SearchBarProps) {
   const handleSubmit = (formData: FormData) => {
     const query = formData.get("query") as string;
-    if (!query) {
+    if (!query.trim()) {
       toast("Please enter your search query.");
       return;
     }
-    onSubmit(query);
+    onSubmit(query.trim());
   }
 
   return (
