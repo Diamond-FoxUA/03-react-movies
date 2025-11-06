@@ -9,7 +9,7 @@ function SearchBar({ onSubmit }: SearchBarProps) {
   const handleSubmit = (formData: FormData) => {
     const query = formData.get("query") as string;
     if (!query.trim()) {
-      toast("Please enter your search query.");
+      toast.error("Please enter your search query.");
       return;
     }
     onSubmit(query.trim());
